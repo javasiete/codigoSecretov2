@@ -285,7 +285,6 @@ function obtenerItemAleatorio(array) {
   return array.splice(indice, 1)[0];
 }
 
-
 // Función para vincular los cuadraditos a los países cuando el usuario hace clic en "Comenzar a Jugar"
 function comenzarAJugar() {
   // Mostrar el mensaje de confirmación
@@ -293,37 +292,44 @@ function comenzarAJugar() {
   
   if (confirmar) {
     var cuadrados = document.querySelectorAll(".cuadradito");
-  var paises = document.querySelectorAll(".pais");
+    var paises = document.querySelectorAll(".pais");
 
-  // Inicializamos los divs pais a gris y vinculamos los cuadraditos
-  paises.forEach(function (divPais, index) {
-    divPais.classList.add("gris"); // Inicialmente gris, asignando la clase correspondiente
+    // Inicializamos los divs pais a gris y vinculamos los cuadraditos
+    paises.forEach(function (divPais, index) {
+      divPais.classList.add("gris"); // Inicialmente gris, asignando la clase correspondiente
 
-    // Vinculamos el cuadradito con el país correspondiente
-    var colorCuadradito = cuadrados[index].style.backgroundColor;
+      // Vinculamos el cuadradito con el país correspondiente
+      var colorCuadradito = cuadrados[index].style.backgroundColor;
 
-    // Asignamos las clases según el color del cuadradito
-    if (colorCuadradito === "red") {
-      vinculaciones[divPais.id] = "rojo"; // Almacenar la clase 'rojo'
-    } else if (colorCuadradito === "black") {
-      vinculaciones[divPais.id] = "negro"; // Almacenar la clase 'negro'
-    } else if (colorCuadradito === "blue") {
-      vinculaciones[divPais.id] = "azul"; // Almacenar la clase 'azul' (si se usara)
-    } else if (colorCuadradito === "yellow") {
-      vinculaciones[divPais.id] = "amarillo"; // Almacenar la clase 'amarillo' (si se usara)
-    }
+      // Asignamos las clases según el color del cuadradito
+      if (colorCuadradito === "red") {
+        vinculaciones[divPais.id] = "rojo"; // Almacenar la clase 'rojo'
+      } else if (colorCuadradito === "black") {
+        vinculaciones[divPais.id] = "negro"; // Almacenar la clase 'negro'
+      } else if (colorCuadradito === "blue") {
+        vinculaciones[divPais.id] = "azul"; // Almacenar la clase 'azul' (si se usara)
+      } else if (colorCuadradito === "yellow") {
+        vinculaciones[divPais.id] = "amarillo"; // Almacenar la clase 'amarillo' (si se usara)
+      }
 
-    // Hacer que al hacer clic en un país, cambie al color vinculado
-    divPais.onclick = function() {
-      // Asignamos la clase vinculada al país
-      divPais.classList.remove("rojo", "azul", "amarillo", "gris", "negro"); // Eliminamos clases previas
-      divPais.classList.add(vinculaciones[divPais.id]); // Añadimos la clase correspondiente
-    };
-  });
+      // Hacer que al hacer clic en un país, cambie al color vinculado
+      divPais.onclick = function() {
+        // Asignamos la clase vinculada al país
+        divPais.classList.remove("rojo", "azul", "amarillo", "gris", "negro"); // Eliminamos clases previas
+        divPais.classList.add(vinculaciones[divPais.id]); // Añadimos la clase correspondiente
 
-  // Activa la Pagina 3, cerrando la Pagina 2:
-  cambiarPagina3()
+        // Si el cuadradito vinculado es negro, mostramos el mensaje en consola
+        if (vinculaciones[divPais.id] === "negro") {
+          console.log("El cuadradito negro fue apretado");
 
+          const musicaPerdiste = document.getElementById('musicaPerdiste');
+          musicaPerdiste.play();
+        }
+      };
+    });
+
+    // Activa la Pagina 3, cerrando la Pagina 2:
+    cambiarPagina3();
 
   } else {
     // Si el usuario hace clic en "Cancelar", no se hace nada
@@ -347,4 +353,3 @@ function cambiarPagina3() {
   pagina2.style.display = "none";
   pagina3.style.display = "flex";
 }
-
