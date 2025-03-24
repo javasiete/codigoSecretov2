@@ -2,7 +2,6 @@
 * {
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
-  font-style: normal;
 
   margin: 0px;
   background-color:lightgrey;
@@ -11,6 +10,10 @@
 /* Defino las variables */
 :root {
   --rojo: #9f3647;
+}
+
+h4 {
+  font-style:italic;
 }
 
 .pagina_1{
