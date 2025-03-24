@@ -1,0 +1,260 @@
+/* Selector universal */
+* {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  margin: 0px;
+  background-color:lightgrey;
+}
+
+/* Defino las variables */
+:root {
+  --rojo: #9f3647;
+}
+
+.pagina_1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  padding: 20px 0px;
+}
+
+.botones_pagina1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#empiezaRojo {
+  width: 100px;
+  height: 40px; /* Puedes ajustar la altura si lo necesitas */
+  background-color: #e03434; /* Rojo claro */
+  border: none;
+  border-radius: 5px; /* Bordes redondeados */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+#empiezaRojo:hover {
+  background-color: #ac2828; /* Rojo ligeramente más oscuro */
+}
+
+#empiezaAzul {
+  width: 100px;
+  height: 40px; /* Puedes ajustar la altura si lo necesitas */
+  background-color: #3875c5; /* Rojo claro */
+  border: none;
+  border-radius: 5px; /* Bordes redondeados */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+#empiezaAzul:hover {
+  background-color: #1f3a86; /* Rojo ligeramente más oscuro */
+}
+
+.pagina_2{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px;
+  gap: 10px;
+}
+
+.div_seteando{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cuadradito {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  display: inline-block;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+
+
+#btn_resetear {
+  width: 140px;
+  height: 40px; /* Puedes ajustar la altura si lo necesitas */
+  border-radius: 5px;
+
+  background-color: white;    /* Fondo blanco */
+  color: black;               /* Texto negro */
+  cursor: pointer;           /* El cursor vuelve a ser puntero */
+  pointer-events: auto;       /* Permite hacer clic */
+}
+#btn_resetear:hover {
+  background-color: #ece9e9; 
+}
+
+/* Estilo inicial, cuando el botón está bloqueado */
+.boton_bloqueado {
+  width: 140px;
+  height: 40px;
+  border-radius: 5px;
+
+  background-color: grey;
+  color: darkgrey; 
+  border: 1px solid #ccc;
+  cursor: not-allowed;        /* No permitir el cursor sobre él */
+  pointer-events: none;       /* Evita que se pueda hacer clic */
+  transition: background-color 0.3s, color 0.3s;
+}
+/* Estilo cuando el botón está habilitado */
+.boton_habilitado {
+  width: 140px;
+  height: 40px;
+  border-radius: 5px;
+
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  pointer-events: auto;       /* Permite hacer clic */
+}
+.boton_habilitado:hover {
+  background-color: #ece9e9;
+}
+
+.pagina_3{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor {
+  display: flex; 
+}
+
+.contenedor > .cuadradito{
+  cursor: pointer;
+
+  /*Tamaño de las Tarjetas*/
+  width: 12vw;
+  height: 10vh;
+
+  border: 2px solid black; /*Bordes en las Tarjetitas*/
+  margin: 1px; /*Separación de todas las Tarjetitas*/
+}
+
+.contenedor > .pais{
+  cursor: pointer;
+
+  /*Tamaño de las Tarjetas*/
+  width: 18vw;
+  height: 16vh;
+
+  /*Tamaño de la Letra dentro de las Tarjetas*/
+  font-size: 36px;
+  
+  
+  font-weight: bold; 
+  border: 2px solid black;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 8px; /* Separación de todas las Tarjetitas */
+}
+
+
+
+
+
+
+/* COLORES */
+.rojo {
+  background-color: red;
+  color: white; 
+}
+
+.azul {
+  background-color: blue;
+  color: white; 
+}
+
+.amarillo {
+  background-color: yellow;
+  color: black; 
+}
+
+.gris {
+  background-color: lightgrey;
+  color: black;
+}
+
+.negro {
+  background-color: rgb(27, 25, 25);
+  color: white;
+}
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Para mi Laptopt (Desde 1242px o menos) */
+@media only screen and (max-width: 1242px){
+
+  .principal{
+    height: 100%;
+  }
+
+  .contenedor > .pais{
+    /*Tamaño de las Tarjetas*/
+    width: 17vw;
+    height: 16vh;
+  
+    /*Tamaño de la Letra dentro de las Tarjetas*/
+    font-size: 28px;
+  }
+
+}
+
+
+
+/* Para Celulares (Desde 768px o menos) */
+@media only screen and (max-width: 768px){
+
+  .principal{
+    height: 100%;
+  }
+
+  .contenedor > .pais{
+    /*Tamaño de las Tarjetas*/
+    width: 18vw;
+    height: 16vh;
+
+    margin: 4px; /* Separación de todas las Tarjetitas */
+
+  
+    /*Tamaño de la Letra dentro de las Tarjetas*/
+    font-size: 19px;
+  }
+
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Codigo Secreto JavaSiete</title> <!-- TITULO EN LA PESTAÑA -->
+
+    <!-- Agrego el link de vinculacion a la Pagina de  Iconos (Favicon) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png"/>
+    <link rel="manifest" href="./favicon/site.webmanifest"/>
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5"/>
+    <meta name="msapplication-TileColor" content="#da532c"/>
+    <meta name="theme-color" content="#ffffff"/>
+
+    <!-- Agrego Google font para darle estilo a las letras -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"rel="stylesheet"/>
+    
+    <!-- Link a los Estilos en CSS -->
+    <link rel="stylesheet" href="./styles/styles_juego.css"/>
+
+    <!-- Agrego el link de vinculacion a la Pagina de Slider (Swiper JS) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> 
+
+  </head>
+
+  <body>
+    <!-- Inicio del Header -->
+      <div class="pagina_1">
+        <div class="intro">
+          <h2 style="text-decoration: underline;">Preparación del Juego</h2>
+          <h3>Antes de continuar debe ocultar esta parte del juego al resto de jugadores.<br>
+            Solamente los LIDERES son los encargados de preparar esta parte.<br>
+            Desactive el "compartir pantalla" por el momento. </h3>
+        </div>
+
+
+        <h2>¿Qué equipo empieza?</h2>
+
+        <div class="botones_pagina1">
+          <button id="empiezaRojo" onclick="empiezaRojo()">Equipo Rojo</button>
+          <button id="empiezaAzul" onclick="empiezaAzul()">Equipo Azul</button>
+        </div>
+        <h4>Clickee el botón del Equipo que empieza a jugar</h4>
+
+      </div> <!-- Fin Pagina 1 -->
+      
+      <div class="pagina_2">
+        <label id="ColoreaCuadraditos">Comienza el ...</label>
+        <div class="div_seteando">
+          <div id="bloque1" class="contenedor">
+            <div id="cuadradito1" class="cuadradito"></div>
+            <div id="cuadradito2" class="cuadradito"></div>
+            <div id="cuadradito3" class="cuadradito"></div>
+            <div id="cuadradito4" class="cuadradito"></div>
+            <div id="cuadradito5" class="cuadradito"></div>
+          </div>
+          <div id="bloque2" class="contenedor">
+            <div id="cuadradito6" class="cuadradito"></div>
+            <div id="cuadradito7" class="cuadradito"></div>
+            <div id="cuadradito8" class="cuadradito"></div>
+            <div id="cuadradito9" class="cuadradito"></div>
+            <div id="cuadradito10" class="cuadradito"></div>
+          </div>
+          <div id="bloque3" class="contenedor">
+            <div id="cuadradito11" class="cuadradito"></div>
+            <div id="cuadradito12" class="cuadradito"></div>
+            <div id="cuadradito13" class="cuadradito"></div>
+            <div id="cuadradito14" class="cuadradito"></div>
+            <div id="cuadradito15" class="cuadradito"></div>
+          </div>
+          <div id="bloque4" class="contenedor">
+            <div id="cuadradito16" class="cuadradito"></div>
+            <div id="cuadradito17" class="cuadradito"></div>
+            <div id="cuadradito18" class="cuadradito"></div>
+            <div id="cuadradito19" class="cuadradito"></div>
+            <div id="cuadradito20" class="cuadradito"></div>
+          </div>
+          <div id="bloque5" class="contenedor">
+            <div id="cuadradito21" class="cuadradito"></div>
+            <div id="cuadradito22" class="cuadradito"></div>
+            <div id="cuadradito23" class="cuadradito"></div>
+            <div id="cuadradito24" class="cuadradito"></div>
+            <div id="cuadradito25" class="cuadradito"></div>
+          </div>
+        </div> <!-- Fin div_seteando -->
+        <div class="div_botones_resetYjugar">
+          <button id="btn_resetear" onclick="resetear()">Resetear</button>
+          <button id="btn_comenzarAJugar" onclick="comenzarAJugar()" class="boton_bloqueado">Comenzar  el Juego</button>
+        </div>
+        
+      </div> <!-- Fin Pagina 2 -->
+      
+
+      <div class="pagina_3">
+        <div id="bloque1" class="contenedor">
+          <div id="pais1" class="pais">Cargando...</div>
+          <div id="pais2" class="pais">Cargando...</div>
+          <div id="pais3" class="pais">Cargando...</div>
+          <div id="pais4" class="pais">Cargando...</div>
+          <div id="pais5" class="pais">Cargando...</div>
+        </div>
+      
+        <div id="bloque2" class="contenedor">
+          <div id="pais6" class="pais">Cargando...</div>
+          <div id="pais7" class="pais">Cargando...</div>
+          <div id="pais8" class="pais">Cargando...</div>
+          <div id="pais9" class="pais">Cargando...</div>
+          <div id="pais10" class="pais">Cargando...</div>
+        </div>
+      
+        <div id="bloque3" class="contenedor">
+          <div id="pais11" class="pais">Cargando...</div>
+          <div id="pais12" class="pais">Cargando...</div>
+          <div id="pais13" class="pais">Cargando...</div>
+          <div id="pais14" class="pais">Cargando...</div>
+          <div id="pais15" class="pais">Cargando...</div>
+        </div>
+      
+        <div id="bloque4" class="contenedor">
+          <div id="pais16" class="pais">Cargando...</div>
+          <div id="pais17" class="pais">Cargando...</div>
+          <div id="pais18" class="pais">Cargando...</div>
+          <div id="pais19" class="pais">Cargando...</div>
+          <div id="pais20" class="pais">Cargando...</div>
+        </div>
+      
+        <div id="bloque5" class="contenedor">
+          <div id="pais21" class="pais">Cargando...</div>
+          <div id="pais22" class="pais">Cargando...</div>
+          <div id="pais23" class="pais">Cargando...</div>
+          <div id="pais24" class="pais">Cargando...</div>
+          <div id="pais25" class="pais">Cargando...</div>
+        </div>
+      </div> <!-- Fin Pagina 3 -->
+
+  </body>
+
+  <!-- Script para Logitos de Internet -->
+  <script src="https://kit.fontawesome.com/2de08f3db3.js" crossorigin="anonymous"></script>
+  <!-- Script para los Sliders -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Link al Código de JavaScript -->
+  <script src="./js/javascript_juego.js"></script>
+
+</html>
