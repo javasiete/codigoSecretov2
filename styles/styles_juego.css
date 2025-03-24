@@ -95,8 +95,6 @@
   cursor: pointer;
 }
 
-
-
 #btn_resetear {
   width: 140px;
   height: 40px; /* Puedes ajustar la altura si lo necesitas */
@@ -182,11 +180,6 @@
   margin: 8px; /* Separación de todas las Tarjetitas */
 }
 
-
-
-
-
-
 /* COLORES */
 .rojo {
   background-color: red;
@@ -213,15 +206,19 @@
   color: white;
 }
 
-
-
-
 /* ------------------------------------------------------------------------------------------------------------------------------*/
 
 /* Para mi Laptopt (Desde 1242px o menos) */
 @media only screen and (max-width: 1242px){
+  .pagina_1{
+    height: 100%;
+  }
 
-  .principal{
+  .pagina_2{
+    height: 100%;
+  }
+
+  .pagina_3{
     height: 100%;
   }
 
@@ -241,7 +238,7 @@
 /* Para Celulares (Desde 768px o menos) */
 @media only screen and (max-width: 768px){
 
-  .principal{
+  .pagina_3{
     height: 100%;
   }
 
@@ -252,7 +249,6 @@
 
     margin: 4px; /* Separación de todas las Tarjetitas */
 
-  
     /*Tamaño de la Letra dentro de las Tarjetas*/
     font-size: 19px;
   }
