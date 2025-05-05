@@ -16,8 +16,81 @@ h4 {
   font-style:italic;
 }
 
-.pagina_1{
+.pagina_0{
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.primerContenedor .contenedor > .pais {
+  cursor:default;
+
+  /*Tamaño de las Tarjetas*/
+  width: 14vw;
+  height: 12vh;
+
+  /*Tamaño de la Letra dentro de las Tarjetas*/
+  font-size: 4vh;
+  
+  font-weight: bold; 
+  border: 2px solid black;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 8px; /* Separación de todas las Tarjetitas */
+}
+
+.pagina_0_abajo {
+  display: flex;
+  gap: 25vh;
+}
+
+.divsPaginaAbajo {
+  display: flex;
+  align-items: center;
+}
+
+#btn_palabrasOk {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+
+  background-color: #038d15;
+  color: white;
+
+  border: solid rgb(1, 85, 1) 1px;
+  border-radius: 5px;
+  
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#btn_palabrasOk:hover {
+  background-color: #00610d;
+}
+
+.btn_clasico {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+
+  background-color: white;
+  color: black;
+
+  border: solid black 1px;
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn_clasico:hover {
+  background-color: #ece9e9; 
+}
+
+.pagina_1{
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -147,6 +220,22 @@ h4 {
   justify-content: center;
 }
 
+.divContadores {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  color: black;
+  gap: 10px;
+}
+
+#faltanRojos {
+  color: rgb(172, 9, 9);
+}
+#faltanAzules {
+  color:#1f3a86;
+}
+
 .contenedor {
   display: flex; 
 }
@@ -208,6 +297,8 @@ h4 {
   background-color: rgb(27, 25, 25);
   color: white;
 }
+
+
 
 /* ------------------------------------------------------------------------------------------------------------------------------*/
 

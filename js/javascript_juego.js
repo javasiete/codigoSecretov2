@@ -1,14 +1,14 @@
 // Lista de Palabras
 var paises = [
   //A
-  'Abogado', 'Aceite', 'África', 'Agente', 'Agua', 'Águila', ' Aguja', 'Agujero', 'Aire', 'Alemania', 'Algodón', 'Alianza',
+  'Abogado', 'Aceite', 'África', 'Agente', 'Agua', 'Águila', 'Aguja', 'Agujero', 'Aire', 'Alemania', 'Algodón', 'Alianza',
   'Ambulancia', 'América', 'Ángel', 'Anillo', 'Antártida', 'Antorcha', 'Araña', 'Archivo', 'Arco', 'Argentina', 'Artículo', 
   'As', 'Atlántida', 'Azteca', 
   //B
   'Baile', 'Bala', 'Ballena', 'Banana', 'Banco', 'Banda', 'Baño', 'Barco', 'Barra', 'Batería', 'Berlín', 'Bermudas', 'Bicho',
   'Blanco', 'Bloque', 'Boca', 'Bola', 'Bolsa', 'Bomba', 'Bosque', 'Bota', 'Botella', 'Botón', 'Brazo', 'Bruja', 
   //C
-  'Caballero', 'Caballo', 'Cabreza', 'Cabina', 'Cabo', 'Cactus', 'Cadena', 'Caja', 'Cama', 'Cámara', 'Cambio', 'Campana',
+  'Caballero', 'Caballo', 'Cabeza', 'Cabina', 'Cabo', 'Cactus', 'Cadena', 'Caja', 'Cama', 'Cámara', 'Cambio', 'Campana',
   'Campo', 'Canal', 'Canguro', 'Canto', 'Caña', 'Capa', 'Capital', 'Caqui', 'Cara', 'Caravana', 'Carga', 'Carrera', 'Carro',
   'Carta', 'Casco', 'Casino', 'Caza', 'Cementerio', 'Centauro', 'Centro', 'Cervantes', 'Checo', 'Chocolate', 'Choque', 'Chuleta',
   'Científico', 'Cinta', 'Cinturón', 'Círculo', 'Clase', 'Coche', 'Cocinero', 'Coco', 'Código', 'Cola', 'Cólera','Colombia', 'Columna', 
@@ -35,7 +35,7 @@ var paises = [
   'Ladrón', 'Lago Ness', 'Láser', 'Látigo', 'Lengua', 'León', 'Libra', 'Lima', 'Limusina', 'Línea', 'Lista', 'Llama', 'Llave',
   'Lomo', 'Londres', 'Luna', 'Luz',
   //M
-  'Maestro', 'Magia', 'Malta', 'Mancha', 'Mando', 'Manga', 'Mango', 'Mano', 'Manzana', 'Mañana', 'Marca', 'Mancha', 'Marfil',
+  'Maestro', 'Magia', 'Malta', 'Mancha', 'Mando', 'Manga', 'Mango', 'Mano', 'Manzana', 'Mañana', 'Marca', 'Marfil',
   'Masa', 'Máscara', 'Mazo', 'Médico', 'Mercurio', 'Mesa', 'Metro', 'México', 'Micro', 'Miel', 'Millonario', 'Mina', 'Misil',
   'Modelo', 'Módulo', 'Monitor', 'Mono', 'Mortero','Moscú', 'Motor', 'Muelle', 'Muerte', 'Muñeca', 'Murcielágo', 'Muro',
   //N
@@ -69,12 +69,42 @@ var paises = [
   //Z
   'Zanahoria', 'Zapato'
 
-
-
-
 ];
 
 //-----------------------------------------------------------------------
+// Página 0
+
+function resetearPalabras() {
+  var paisesDisponibles = paises.slice(); // Hacemos una copia de la lista original
+
+  // Volver a recorrer cada div con clase 'pais' y reasignar una palabra aleatoria
+  var divsPais = document.querySelectorAll(".pais");
+  divsPais.forEach(function(divPais) {
+    var paisAleatorio = obtenerItemAleatorio(paisesDisponibles);
+    divPais.textContent = paisAleatorio;
+  });
+
+  // También actualizamos las palabras de la página 3
+  copiarPalabra();
+}
+
+function palabrasOk() {
+  const pagina0 = document.querySelector(".pagina_0");
+  const pagina1 = document.querySelector(".pagina_1");
+
+  pagina0.style.display = "none";
+  pagina1.style.display = "flex";
+
+  sincronizarPalabras();
+  
+}
+
+
+
+
+//-----------------------------------------------------------------------
+// Página 1
+
 var equipoSeleccionado = "";
 var turnoActual = "";
 var turnosRestantes = 0;
@@ -82,30 +112,37 @@ var juegoFinalizado = false;
 var modoAsesino = false;
 var coloresCuadraditos = {};
 var vinculaciones = {};
+var palabrasRestantes = {
+  rojo: 9,
+  azul: 8
+};
 
-// Función para iniciar el equipo rojo
 function empiezaRojo() {
   if (juegoFinalizado) return;
   equipoSeleccionado = "rojo";
   turnoActual = "rojo";
   turnosRestantes = 9;
+  palabrasRestantes = { rojo: 9, azul: 8 };
+  document.getElementById("faltanRojos").innerText = "Faltan: 9";
+  document.getElementById("faltanAzules").innerText = "Faltan: 8";
   document.getElementById("ColoreaCuadraditos").innerHTML = 'Asigna a los Agentes <b style="color: red;">ROJOS</b>.';
   habilitarPintado("red");
   cambiarPagina2();
 }
 
-// Función para iniciar el equipo azul
 function empiezaAzul() {
   if (juegoFinalizado) return;
   equipoSeleccionado = "azul";
   turnoActual = "azul";
   turnosRestantes = 9;
+  palabrasRestantes = { rojo: 8, azul: 9 };
+  document.getElementById("faltanRojos").innerText = "Faltan: 8";
+  document.getElementById("faltanAzules").innerText = "Faltan: 9";
   document.getElementById("ColoreaCuadraditos").innerHTML = 'Asigna a los Agentes <b style="color: blue;">AZULES</b>.';
   habilitarPintado("blue");
   cambiarPagina2();
 }
 
-// Habilita el pintado solo para el equipo en turno o el asesino
 function habilitarPintado(color) {
   var cuadrados = document.querySelectorAll(".cuadradito");
   cuadrados.forEach(function (cuadradito) {
@@ -122,7 +159,6 @@ function habilitarPintado(color) {
   });
 }
 
-// Función para resetear el juego
 function resetear() {
   document.querySelectorAll(".cuadradito").forEach(cuadradito => {
     cuadradito.style.backgroundColor = "";
@@ -133,6 +169,9 @@ function resetear() {
   modoAsesino = false;
   turnoActual = equipoSeleccionado;
   turnosRestantes = 9;
+  palabrasRestantes = equipoSeleccionado === "rojo" ? { rojo: 9, azul: 8 } : { rojo: 8, azul: 9 };
+  document.getElementById("faltanRojos").innerText = "Faltan: " + palabrasRestantes.rojo;
+  document.getElementById("faltanAzules").innerText = "Faltan: " + palabrasRestantes.azul;
   document.getElementById("ColoreaCuadraditos").innerHTML = turnoActual === "rojo" 
     ? 'Asigna a los Agentes <b style="color: red;">ROJOS</b>.' 
     : 'Asigna a los Agentes <b style="color: blue;">AZULES</b>.';
@@ -140,61 +179,53 @@ function resetear() {
   bloquearBotonComenzar();
 }
 
-// Función para bloquear el botón de comenzar el juego
 function bloquearBotonComenzar() {
   var boton = document.getElementById("btn_comenzarAJugar");
   boton.classList.remove("boton_habilitado");
   boton.classList.add("boton_bloqueado");
 }
 
-
-// Función para pintar un cuadradito
 function pintarCuadradito(cuadradito, color) {
-  if (juegoFinalizado || turnosRestantes <= 0) return; // No permitir pintar si ya terminó
+  if (juegoFinalizado || turnosRestantes <= 0) return;
 
   cuadradito.style.backgroundColor = color;
-  cuadradito.style.pointerEvents = "none"; // Desactivar clic en ese cuadradito
-  
-  // Almacenar el color del cuadradito en el objeto coloresCuadraditos
+  cuadradito.style.pointerEvents = "none";
   coloresCuadraditos[cuadradito.id] = color;
 
   turnosRestantes--;
 
-  // Si el equipo ha pintado todos sus cuadraditos
   if (turnosRestantes === 0) {
     if (turnoActual === equipoSeleccionado) {
-      // Cambio de turno al segundo equipo
       turnoActual = (equipoSeleccionado === "rojo") ? "azul" : "rojo";
-      turnosRestantes = 8; // Segundo equipo solo puede pintar 8
+      turnosRestantes = 8;
       document.getElementById("ColoreaCuadraditos").innerHTML = 'Ahora asigna a los agentes ' + 
-  (turnoActual === "rojo" 
-    ? '<b style="color: red;">ROJOS</b>.' 
-    : '<b style="color: blue;">AZULES</b>.');
+        (turnoActual === "rojo" 
+          ? '<b style="color: red;">ROJOS</b>.' 
+          : '<b style="color: blue;">AZULES</b>.');
+      document.getElementById("musicaSiguiente").play();
       habilitarPintado(turnoActual === "rojo" ? "red" : "blue");
     } else {
-      // Si el segundo equipo ya terminó, activar el modo asesino
       modoAsesino = true;
       document.getElementById("ColoreaCuadraditos").innerText = "Por último. Asigna al asesino NEGRO.";
-      habilitarPintado("black"); // Habilitar pintado en negro
+      document.getElementById("musicaSiguiente").play();
+      habilitarPintado("black");
     }
   }
 }
 
-// Función para asignar al Asesino
 function asignarAsesino(cuadradito) {
   if (juegoFinalizado || !modoAsesino) return;
 
   cuadradito.style.backgroundColor = "black";
-  cuadradito.style.pointerEvents = "none"; // Desactivar clic en ese cuadradito
-  coloresCuadraditos[cuadradito.id] = "black"; // Almacenar el color negro
-  modoAsesino = false; // Desactivar modo asesino
-  juegoFinalizado = true; // Finalizar el juego
+  cuadradito.style.pointerEvents = "none";
+  coloresCuadraditos[cuadradito.id] = "black";
+  modoAsesino = false;
+  juegoFinalizado = true;
 
   deshabilitarTodosLosCuadraditos();
-  mensaje1(); // Mostrar mensaje final
+  mensaje1();
 }
 
-// Deshabilita todos los cuadraditos para que no se puedan pintar más
 function deshabilitarTodosLosCuadraditos() {
   var cuadrados = document.querySelectorAll(".cuadradito");
   cuadrados.forEach(function (cuadradito) {
@@ -202,146 +233,134 @@ function deshabilitarTodosLosCuadraditos() {
   });
 }
 
-// Muestra el mensaje final después de 1 segundo
 function mensaje1() {
-  // Colorea los cuadraditos restantes de amarillo
   var cuadrados = document.querySelectorAll(".cuadradito");
   cuadrados.forEach(function (cuadradito) {
-    if (!cuadradito.style.backgroundColor) { // Solo si no tiene color asignado
+    if (!cuadradito.style.backgroundColor) {
       cuadradito.style.backgroundColor = "yellow";
-      coloresCuadraditos[cuadradito.id] = "yellow"; // Almacenar como amarillo
+      coloresCuadraditos[cuadradito.id] = "yellow";
     }
   });
 
-  // Espera 1 segundo y muestra el mensaje final
   setTimeout(function () {
     document.getElementById("ColoreaCuadraditos").innerText = "Tablero preparado para Jugar";
-
-    // Se habilita para apretar el boton "Comenzar el Juego":
     activarBoton();
-    
-    // Mostrar todos los cuadraditos en consola al final del juego
     mostrarColores();
-
   }, 1000);
 }
 
 function activarBoton() {
   var boton = document.getElementById("btn_comenzarAJugar");
-  
-  // Eliminar la clase de bloqueado, para luego añadir la clase habilitado:
   boton.classList.remove("boton_bloqueado");
   boton.classList.add("boton_habilitado");
 }
 
-// Función para mostrar los cuadraditos de cada color
 function mostrarColores() {
-  let rojos = [];
-  let azules = [];
-  let negros = [];
-  let amarillos = [];
-  
-  // Recorremos el objeto coloresCuadraditos para clasificar los cuadraditos por su color
+  let rojos = [], azules = [], negros = [], amarillos = [];
+
   for (var id in coloresCuadraditos) {
     let color = coloresCuadraditos[id];
-    if (color === "red") {
-      rojos.push(id); // Guardamos el id de los cuadraditos rojos
-    } else if (color === "blue") {
-      azules.push(id); // Guardamos el id de los cuadraditos azules
-    } else if (color === "black") {
-      negros.push(id); // Guardamos el id de los cuadraditos negros
-    } else if (color === "yellow") {
-      amarillos.push(id); // Guardamos el id de los cuadraditos amarillos
-    }
+    if (color === "red") rojos.push(id);
+    else if (color === "blue") azules.push(id);
+    else if (color === "black") negros.push(id);
+    else if (color === "yellow") amarillos.push(id);
   }
 
-  // Mostrar los IDs de los cuadraditos en consola
   console.log("Cuadraditos rojos: ", rojos.join(", "));
   console.log("Cuadraditos azules: ", azules.join(", "));
   console.log("Cuadraditos negros: ", negros.join(", "));
   console.log("Cuadraditos amarillos: ", amarillos.join(", "));
 }
 
-//-----------------------------------------------------------------------
-
-// Asignar países aleatorios a los divs
 asignarPaisesAleatorios();
 
-// Función para asignar palabras aleatorias a los divs
 function asignarPaisesAleatorios() {
-  var paisesDisponibles = paises.slice(); // Copia de la lista de países original
-  
-  // Recorrer cada PALABRA y asignar una palabra al AZAR
-  for (var i = 1; i <= 399; i++) {
-    var divPais = document.getElementById('pais' + i);
-    var paisAleatorio = obtenerItemAleatorio(paisesDisponibles);
-    divPais.textContent = paisAleatorio;
+  var paisesDisponibles = paises.slice();
+
+  for (let i = 1; i <= 25; i++) {
+    let divPais = document.getElementById('pais' + i);
+    if (divPais) {
+      let paisAleatorio = obtenerItemAleatorio(paisesDisponibles);
+      divPais.textContent = paisAleatorio;
+    }
+  }
+
+  copiarPalabra();
+}
+
+function copiarPalabra() {
+  for (let i = 1; i <= 25; i++) {
+    let palabraVisible = document.getElementById("palabra" + i);
+    let palabraOculta = document.getElementById("pais" + i);
+    if (palabraVisible && palabraOculta) {
+      palabraVisible.textContent = palabraOculta.textContent;
+    }
   }
 }
 
-// Función para obtener un ítem aleatorio y único de un array
 function obtenerItemAleatorio(array) {
   var indice = Math.floor(Math.random() * array.length);
   return array.splice(indice, 1)[0];
 }
 
-// Función para vincular los cuadraditos a los países cuando el usuario hace clic en "Comenzar a Jugar"
 function comenzarAJugar() {
-  // Mostrar el mensaje de confirmación
   var confirmar = confirm("¿El tablero ya está terminado y desea comenzar el juego?");
-  
-  if (confirmar) {
-    var cuadrados = document.querySelectorAll(".cuadradito");
-    var paises = document.querySelectorAll(".pais");
+  if (!confirmar) return;
 
-    // Inicializamos los divs pais a gris y vinculamos los cuadraditos
-    paises.forEach(function (divPais, index) {
-      divPais.classList.add("gris"); // Inicialmente gris, asignando la clase correspondiente
+  var cuadrados = document.querySelectorAll(".cuadradito");
+  vinculaciones = {};
+  var cantidadPalabras = 25;
 
-      // Vinculamos el cuadradito con el país correspondiente
-      var colorCuadradito = cuadrados[index].style.backgroundColor;
+  for (let i = 1; i <= cantidadPalabras; i++) {
+    let divPais = document.getElementById("palabra" + i);
+    divPais.classList.add("gris");
 
-      // Asignamos las clases según el color del cuadradito
-      if (colorCuadradito === "red") {
-        vinculaciones[divPais.id] = "rojo"; // Almacenar la clase 'rojo'
-      } else if (colorCuadradito === "black") {
-        vinculaciones[divPais.id] = "negro"; // Almacenar la clase 'negro'
-      } else if (colorCuadradito === "blue") {
-        vinculaciones[divPais.id] = "azul"; // Almacenar la clase 'azul' (si se usara)
-      } else if (colorCuadradito === "yellow") {
-        vinculaciones[divPais.id] = "amarillo"; // Almacenar la clase 'amarillo' (si se usara)
-      }
+    let colorCuadradito = cuadrados[i - 1].style.backgroundColor;
 
-      // Hacer que al hacer clic en un país, cambie al color vinculado
-      divPais.onclick = function() {
-        // Asignamos la clase vinculada al país
-        divPais.classList.remove("rojo", "azul", "amarillo", "gris", "negro"); // Eliminamos clases previas
-        divPais.classList.add(vinculaciones[divPais.id]); // Añadimos la clase correspondiente
+    if (colorCuadradito === "red") {
+      vinculaciones[divPais.id] = "rojo";
+    } else if (colorCuadradito === "black") {
+      vinculaciones[divPais.id] = "negro";
+    } else if (colorCuadradito === "blue") {
+      vinculaciones[divPais.id] = "azul";
+    } else if (colorCuadradito === "yellow") {
+      vinculaciones[divPais.id] = "amarillo";
+    }
 
-        // Si el cuadradito vinculado es negro, mostramos el mensaje en consola
-        if (vinculaciones[divPais.id] === "negro") {
-          console.log("El cuadradito negro fue apretado");
+    divPais.onclick = function () {
+      if (divPais.classList.contains("rojo") || divPais.classList.contains("azul") || divPais.classList.contains("negro") || divPais.classList.contains("amarillo")) return;
 
-          const musicaPerdiste = document.getElementById('musicaPerdiste');
-          musicaPerdiste.play();
+      divPais.classList.remove("rojo", "azul", "amarillo", "gris", "negro");
+      divPais.classList.add(vinculaciones[divPais.id]);
+
+      const color = vinculaciones[divPais.id];
+      if (color === "rojo" || color === "azul") {
+        palabrasRestantes[color]--;
+        actualizarContador(color);
+
+        if (palabrasRestantes[color] === 0) {
+          document.getElementById("musicaPGanaste").play();
         }
-      };
-    });
+      } else if (color === "negro") {
+        document.getElementById("musicaPerdiste").play();
+      }
+    };
+  }
 
-    // Activa la Pagina 3, cerrando la Pagina 2:
-    cambiarPagina3();
+  cambiarPagina3();
+}
 
-  } else {
-    // Si el usuario hace clic en "Cancelar", no se hace nada
-    return;
+function actualizarContador(equipo) {
+  if (equipo === "rojo") {
+    document.getElementById("faltanRojos").innerText = "Faltan: " + palabrasRestantes.rojo;
+  } else if (equipo === "azul") {
+    document.getElementById("faltanAzules").innerText = "Faltan: " + palabrasRestantes.azul;
   }
 }
 
-// -----------------------------------------------------------
 function cambiarPagina2() {
   var pagina1 = document.querySelector('.pagina_1');
   var pagina2 = document.querySelector('.pagina_2');
-
   pagina1.style.display = "none";
   pagina2.style.display = "flex";
 }
@@ -349,7 +368,6 @@ function cambiarPagina2() {
 function cambiarPagina3() {
   var pagina2 = document.querySelector('.pagina_2');
   var pagina3 = document.querySelector('.pagina_3');
-
   pagina2.style.display = "none";
   pagina3.style.display = "flex";
 }
