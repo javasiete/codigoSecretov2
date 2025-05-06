@@ -72,7 +72,7 @@ var paises = [
 ];
 
 //-----------------------------------------------------------------------
-// Página 0
+// Página 1
 
 function resetearPalabras() {
   var paisesDisponibles = paises.slice(); // Hacemos una copia de la lista original
@@ -84,26 +84,28 @@ function resetearPalabras() {
     divPais.textContent = paisAleatorio;
   });
 
-  // También actualizamos las palabras de la página 3
+  // También actualizamos las palabras de la página 4
   copiarPalabra();
 }
 
 function palabrasOk() {
-  const pagina0 = document.querySelector(".pagina_0");
   const pagina1 = document.querySelector(".pagina_1");
+  const pagina2 = document.querySelector(".pagina_2");
 
-  pagina0.style.display = "none";
-  pagina1.style.display = "flex";
+  pagina1.style.display = "none";
+  pagina2.style.display = "flex";
 
-  sincronizarPalabras();
-  
+  sincronizarPalabras(); 
+}
+
+function ir_instrucciones() {
+  window.location.href = "/instrucciones.html";
 }
 
 
 
-
 //-----------------------------------------------------------------------
-// Página 1
+// Página 2
 
 var equipoSeleccionado = "";
 var turnoActual = "";
@@ -127,7 +129,7 @@ function empiezaRojo() {
   document.getElementById("faltanAzules").innerText = "Faltan: 8";
   document.getElementById("ColoreaCuadraditos").innerHTML = 'Asigna a los Agentes <b style="color: red;">ROJOS</b>.';
   habilitarPintado("red");
-  cambiarPagina2();
+  cambiarPagina3();
 }
 
 function empiezaAzul() {
@@ -140,7 +142,7 @@ function empiezaAzul() {
   document.getElementById("faltanAzules").innerText = "Faltan: 9";
   document.getElementById("ColoreaCuadraditos").innerHTML = 'Asigna a los Agentes <b style="color: blue;">AZULES</b>.';
   habilitarPintado("blue");
-  cambiarPagina2();
+  cambiarPagina3();
 }
 
 function habilitarPintado(color) {
@@ -347,7 +349,7 @@ function comenzarAJugar() {
     };
   }
 
-  cambiarPagina3();
+  cambiarPagina4();
 }
 
 function actualizarContador(equipo) {
@@ -358,16 +360,16 @@ function actualizarContador(equipo) {
   }
 }
 
-function cambiarPagina2() {
-  var pagina1 = document.querySelector('.pagina_1');
-  var pagina2 = document.querySelector('.pagina_2');
-  pagina1.style.display = "none";
-  pagina2.style.display = "flex";
-}
-
 function cambiarPagina3() {
   var pagina2 = document.querySelector('.pagina_2');
   var pagina3 = document.querySelector('.pagina_3');
   pagina2.style.display = "none";
   pagina3.style.display = "flex";
+}
+
+function cambiarPagina4() {
+  var pagina3 = document.querySelector('.pagina_3');
+  var pagina4 = document.querySelector('.pagina_4');
+  pagina3.style.display = "none";
+  pagina4.style.display = "flex";
 }

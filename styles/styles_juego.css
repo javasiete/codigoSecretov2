@@ -16,7 +16,9 @@ h4 {
   font-style:italic;
 }
 
-.pagina_0{
+/* ***************************PAGINA 1*************************** */
+
+.pagina_1{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,9 +45,9 @@ h4 {
   margin: 8px; /* Separación de todas las Tarjetitas */
 }
 
-.pagina_0_abajo {
+.pagina_1_abajo {
   display: flex;
-  gap: 25vh;
+  gap: 7vh;
 }
 
 .divsPaginaAbajo {
@@ -89,7 +91,27 @@ h4 {
   background-color: #ece9e9; 
 }
 
-.pagina_1{
+#btn_instrucciones {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+
+  background-color: #c46f01;
+  color: white;
+
+  border: solid black 1px;
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#btn_instrucciones:hover {
+  background-color: #a15c02;
+}
+
+/* ***************************PAGINA 2*************************** */
+
+.pagina_2{
   display: none;
   flex-direction: column;
   align-items: center;
@@ -106,7 +128,7 @@ h4 {
   padding: 20px 0px;
 }
 
-.botones_pagina1{
+.botones_pagina2{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,7 +167,9 @@ h4 {
   background-color: #1f3a86; /* Rojo ligeramente más oscuro */
 }
 
-.pagina_2{
+/* ***************************PAGINA 3*************************** */
+
+.pagina_3{
   display: none;
   flex-direction: column;
   align-items: center;
@@ -213,7 +237,9 @@ h4 {
   background-color: #ece9e9;
 }
 
-.pagina_3{
+/* ***************************PAGINA 4*************************** */
+
+.pagina_4{
   display: none;
   flex-direction: column;
   align-items: center;
@@ -298,11 +324,44 @@ h4 {
   color: white;
 }
 
-
-
 /* ------------------------------------------------------------------------------------------------------------------------------*/
+/* Para el Monitor de mi Oficina (Desde 1242px o menos) */
+@media only screen and (max-width: 1280px){
+  .pagina_1{
+    height: 100%;
+  }
 
-/* Para mi Laptopt (Desde 1242px o menos) */
+  .pagina_2{
+    height: 100%;
+  }
+
+  .pagina_3{
+    height: 100%;
+  }
+
+  .pagina_4{
+    height: 100%;
+  }
+
+  .primerContenedor > .contenedor > .pais {
+    font-size: 24px;
+  }
+
+
+  /*Para las tarjetas de la Pagina 4 (Del monitor de mi Oficina)*/
+  .contenedor > .pais{
+    /*Tamaño de las Tarjetas*/
+    width: 17vw;
+    height: 16vh;
+  
+    /*Tamaño de la Letra dentro de las Tarjetas*/
+    font-size: 35px;
+  }
+
+}
+
+
+/* Para Laptopts (Desde 1242px o menos) */
 @media only screen and (max-width: 1242px){
   .pagina_1{
     height: 100%;
@@ -313,6 +372,10 @@ h4 {
   }
 
   .pagina_3{
+    height: 100%;
+  }
+
+  .pagina_4{
     height: 100%;
   }
 
@@ -331,8 +394,11 @@ h4 {
 
 /* Para Celulares (Desde 768px o menos) */
 @media only screen and (max-width: 768px){
+  .pagina_1{
+    height: 100%;
+  }
 
-  .pagina_3{
+  .pagina_4{
     height: 100%;
   }
 

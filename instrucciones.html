@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Codigo Secreto JavaSiete</title> <!-- TITULO EN LA PESTAÑA -->
+
+    <!-- Agrego el link de vinculacion a la Pagina de  Iconos (Favicon) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png"/>
+    <link rel="manifest" href="./favicon/site.webmanifest"/>
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5"/>
+    <meta name="msapplication-TileColor" content="#da532c"/>
+    <meta name="theme-color" content="#ffffff"/>
+
+    <!-- Agrego Google font para darle estilo a las letras -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"rel="stylesheet"/>
+    
+    <!-- Link a los Estilos en CSS -->
+    <link rel="stylesheet" href="./styles/instrucciones.css"/>
+
+    <!-- Agrego el link de vinculacion a la Pagina de Slider (Swiper JS) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> 
+
+  </head>
+
+  <body>
+    <!-- Inicio del Header -->
+    <div class="pagina_1">
+
+        <div class="premisa">
+            <h2>Pag.1/5 - Premisa</h2>
+            <p>Son dos agencias de espionaje.</p>
+            <p>Cada agencia cuenta con un <span class="negri_cursi">Lider</span class="negri_cursi"> y el resto serán <span class="negri_cursi">Agentes de Campo</span>.</p>
+            <p>En la pantalla apareceran 25 personajes con sus "Nombres en clave". </p> 
+            <p>El objetivo es que los <span class="negri_cursi">Agentes de Campo</span> desvelen las identidades secretas de los <span class="subrayado">Agentes en Cubierto</span> de su equipo.</p>
+            <p>> Lo harán a través de codigos secretos que el <span class="negri_cursi">Lider</span> les irá diciendo.</p> 
+        </div>
+
+        <div class="resumen">
+            <h2>En resumen</h2>
+            <p>Los <span class="negri_cursi">Lideres</span> saben las identidades secretas de los 25 personajes, pero sus compañeros de equipo (<span class="negri_cursi">Agentes de Campo</span>) sólo verán a las personas con su nombre en clave.</p>
+            <br>
+            <p>Y cuidado al desvelarlos porque entre ellos hay:</p>
+            <p>- Agentes de la agencia rival<br>
+               - Civiles<br>
+               - Un Asesino</p>
+            <br>
+            <img src="./imgs/imagen_1.png" alt="imagen_1">
+        </div>
+
+        <div class="pagina_1_abajo">
+            <button class="btn_clasico" onclick="regresar_index()">Pág. Principal</button>
+            <button class="btn_continuar" onclick="ir_pagina_2()">Pág. Siguiente</button>
+        </div>
+
+        
+    </div> <!-- Fin Pagina 1 -->
+
+    <div class="pagina_2">
+        <div class="comoJugar">
+            <h2>Pag.2/5 - ¿Cómo jugar?</h2>
+
+            <p>Se separan en dos grupos (Equipo Rojo y Equipo Azul).</p>
+            <br>
+
+            <p>Uno de cada Equipo será elegido como <span class="negri_cursi">Lider</span> (unicamente por esa ronda).</p>
+            <br>
+
+            <p>Los <span class="negri_cursi">Lideres</span> se irán alternando para aportar pistas compuestas por <span class="subrayado">una sola palabra</span>.</p>
+            <h4>Una pista puede relacionarse con varias de las palabras que hay en la pantalla.</h4>
+            <br>
+
+            <p>Los <span class="negri_cursi">Agentes</span> intentarán luego adivinar a qué palabras se refiere su Lider. Y cuando un <span class="negri_cursi">Agente</span> toque una palabra, se revelará la identidad secreta.</p>
+            <p> > Si era uno de sus <span class="subrayado">Agentes en Cubierto</span> pueden seguir adivinando.<br>
+                > Pero caso de fallar, le tocará el turno al otro Equipo.
+            </p> 
+            <br>
+
+            <p>Si un equipo se quedó sin ideas de cual pista vinculó su Lider, puede optar por "Pasar de Turno".</p>
+            <h4>Pero antes debieron haberlo intentado acertar una vez.</h4>
+        </div>
+
+        <div class="finalDelJuego">
+            <h2>Final del Juego</h2>
+
+            <p>1) El Equipo ganará cuando logre contactar con TODOS sus <span class="subrayado">Agentes en Cubierto</span>.</p>
+            <p>2) Y si por accidente contactan al <span class="negri_cursi">Asesino</span>. Ese Equipo perderá.</p>
+
+        </div>
+
+
+
+        <div class="pagina_1_abajo">
+            <button class="btn_clasico" onclick="regresar_index()">Pág. Principal</button>
+            <button class="btn_continuar" onclick="volver_pagina_1()">Pág. Anterior</button>
+            <button class="btn_continuar" onclick="ir_pagina_3()">Pág. Siguiente</button>
+        </div>
+
+    </div> <!-- Fin Pagina 2 -->
+
+    <div class="pagina_3">
+        <div class="reglamento">
+            <h2>Pag.3/5 - Reglamento</h2>
+            <p>Si sos el <span class="negri_cursi">Lider</span> tenes que pensar una pista de UNA SOLA palabra que se relacione con algunos de los nombres en 
+                clave que tu equipo intenta adivinar.</p>
+            <p>*** Si tenes una buena pista, decila en voz alta **</p>
+            <br>
+
+            <p><i>Acá debajo hay un Tablero de ejemplo:</i></p>
+            <img src="./imgs/ejemploTablero.png" alt="ejemploTablero.png">
+
+            <p>Ejemplo con: <span class="negrita">DRAGÓN</span> y <span class="negrita">PRINCESA</span>.</p>
+            <p>Estas dos palabras son muy habituales en muchas historias, por eso podrías decir <span class="negri_rojo">"CUENTO x2"</span>.</p>
+            <p>También podes decir <span class="negri_rojo">"ALTEZA x1"</span>, pero es más divertido intentar abarcar dos o más palabras.</p>
+            <br>         
+
+        </div>
+
+        <div class="pagina_1_abajo">
+            <button class="btn_clasico" onclick="regresar_index()">Pág. Principal</button>
+            <button class="btn_continuar" onclick="volver_pagina_2()">Pág. Anterior</button>
+            <button class="btn_continuar" onclick="ir_pagina_4()">Pág. Siguiente</button>
+        </div>
+    </div>
+
+    <div class="pagina_4">
+        <div class="noEstaPermitido">
+            <h2>Pag.4/5 - No está permitido como Lider:</h2>
+            <p>1) No podes referirte a las letras INICIALES.</p>
+            <p>Ejemplo: <span class="negri_rojo">"B x3"</span> para <span class="negrita">BANDA</span>, <span class="negrita">BERLÍN</span> y <span class="negrita">BOSQUE</span>.</p>
+            <br>
+
+            <p><i>Tablero de ejemplo:</i></p>
+            <img src="./imgs/ejemploTablero.png" alt="ejemploTablero.png">
+
+            <p>2) No podes dar una pista en referencia a las UBICACIONES donde estan los Agentes en Cubierto.</p>
+            <p>Ejemplo: <span class="negri_rojo">"DERECHA x3"</span> para <span class="negrita">RASCACIELO</span>, <span class="negrita">VENUS</span> y <span class="negrita">BOSQUE</span>.</p>
+            <br>
+
+            <p>3) Las pistas deben ser en CASTELLANO, no podes utilizar <span class="negri_rojo">"SPIDER"</span> 
+                para <span class="negrita">ARAÑA</span> y <span class="negrita">NUEVA YORK</span>.
+            </p>
+            <p>Pero si podes utilizar <span class="negri_rojo">"SPIDER-MAN"</span> <i>(Porque es un personaje)</i>.</p>
+            </p>
+            <br>
+
+            <p>4) No podes decir la MITAD de una palabra compuesta.</p>
+            <p>Ejemplo: <span class="negri_rojo">"RASCAR"</span> o <span class="negri_rojo">"CIELO"</span>, para <span class="negrita">RASCACIELO</span>.</p>
+            <br>
+
+            <p>5) Se puede DELETREAR una pista para que <span class="subrayado">no se preste a confusión</span>.</p>
+            <p>Ejemplo: <span class="negri_rojo">"ORCA/HORCA"</span>, o <span class="negri_rojo">"BOTA/VOTA"</span>.</p>
+            <br>
+        </div>
+        
+        <div class="pagina_1_abajo">
+            <button class="btn_clasico" onclick="regresar_index()">Pág. Principal</button>
+            <button class="btn_continuar" onclick="volver_pagina_3()">Pág. Anterior</button>
+            <button class="btn_continuar" onclick="ir_pagina_5()">Pág. Siguiente</button>
+        </div>
+    </div> <!-- Fin Pagina 4 -->
+
+    <div class="pagina_5">
+        <div class="espirituDelJuego">
+            <h2>Pag.5/5 - Espiritu del juego:</h2>
+            <p>La idea original del juego es que el Lider se limite a hablar lo menos posible y sólo diga una palabra (osea, la PISTA).</p>
+            <p> No deberia decir la frase: <i>"Esta pista es rebuscada, pero es GIGANTEZCO x2"</i></p>
+            <br>
+
+            <p>En lo posible, también debería evitarse el <span class="negrita">contacto visual</span> entre el <span class="negri_cursi">Lider</span> y sus <span class="negri_cursi">Agentes</span>.</p>
+            <p><i>Esto es para mantener la escencia del juego.</i></p>
+            <br>
+
+            <p>A veces tendrán que decidir sobre la marcha qué es válido y qué no lo es. 
+                Cada grupo de juego puede tener distintas formas de verlo.
+            </p>
+            <p>Una opción para cuando sos <span class="negri_cursi">Lider</span> y te toca decir una pista que no estás segur@ si es valida,
+                es consultarlo previamente con el/la Lider rival para verificarla.
+            </p>
+            
+        </div>
+        
+        <div class="pagina_1_abajo">
+            <button class="btn_clasico" onclick="regresar_index()">Pág. Principal</button>
+            <button class="btn_continuar" onclick="volver_pagina_4()">Pág. Anterior</button>
+        </div>
+        
+    </div> <!-- Fin Pagina 5 -->
+
+    <audio id="musicaPerdiste">
+        <source src="./music/perdiste.mp3" type="audio/mpeg">
+    </audio>
+
+  </body>
+
+  <!-- Script para Logitos de Internet -->
+  <script src="https://kit.fontawesome.com/2de08f3db3.js" crossorigin="anonymous"></script>
+  <!-- Script para los Sliders -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Link al Código de JavaScript -->
+  <script src="./js/instrucciones.js"></script>
+
+</html>

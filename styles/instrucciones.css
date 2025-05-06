@@ -1,0 +1,267 @@
+/* Selector universal */
+* {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+
+  margin: 0px;
+  background-color:lightgrey;
+}
+
+h2 {
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-style:italic;
+}
+
+.negri_cursi {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.negrita {
+  font-weight: 700;
+}
+
+.negri_rojo {
+  font-weight: 700;
+  color: red;
+}
+
+.subrayado {
+  text-decoration: underline;
+}
+
+/* ***************************PAGINA 1*************************** */
+.pagina_1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.premisa{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+.resumen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+.resumen img {
+  width: 40vw;
+  height: auto;
+}
+
+.pagina_1_abajo {
+  display: flex;
+  gap: 7vh;
+}
+
+.btn_clasico {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+
+  background-color: #038d15;
+  color: white;
+
+  border: solid rgb(1, 85, 1) 1px;
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn_clasico:hover {
+  background-color: #00610d;
+}
+
+.btn_continuar {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+
+  background-color: #c46f01;
+  color: white;
+
+  border: solid black 1px;
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn_continuar:hover {
+  background-color: #a15c02;
+}
+
+/* ***************************PAGINA 2*************************** */
+.pagina_2 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.comoJugar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+.finalDelJuego {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+
+/* ***************************PAGINA 3*************************** */
+.pagina_3 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.reglamento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+.reglamento img {
+  width: 40vw;
+  height: auto;
+  margin: 10px 0px;
+}
+
+/* ***************************PAGINA 4*************************** */
+.pagina_4{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.noEstaPermitido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+.noEstaPermitido img {
+  width: 40vw;
+  height: auto;
+  margin: 10px 0px;
+}
+
+/* ***************************PAGINA 5*************************** */
+.pagina_5{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.espirituDelJuego {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------*/
+/* Para el Monitor de mi Oficina (Desde 1242px o menos) */
+@media only screen and (max-width: 1280px){
+  .pagina_1{
+    height: 100%;
+  }
+
+  .pagina_2{
+    height: 100%;
+  }
+
+  .pagina_3{
+    height: 100%;
+  }
+
+  .pagina_4{
+    height: 100%;
+  }
+
+}
+
+/* Para Laptopts (Desde 1242px o menos) */
+@media only screen and (max-width: 1242px){
+  .pagina_1{
+    height: 100%;
+  }
+
+  .pagina_2{
+    height: 100%;
+  }
+
+  .pagina_3{
+    height: 100%;
+  }
+
+  .pagina_4{
+    height: 100%;
+  }
+
+  .pagina_5{
+    height: 100%;
+  }
+
+}
+
+/* Para Celulares (Desde 768px o menos) */
+@media only screen and (max-width: 768px){
+  .pagina_1{
+    height: 100%;
+  }
+
+  .pagina_2{
+    height: 100%;
+  }
+
+  .pagina_3{
+    height: 100%;
+  }
+
+  .pagina_4{
+    height: 100%;
+  }
+
+  .pagina_5{
+    height: 100%;
+  }
+
+
+}

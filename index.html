@@ -29,7 +29,7 @@
 
   <body>
     <!-- Inicio del Header -->
-      <div class="pagina_0">
+      <div class="pagina_1">
 
         <div class="primerContenedor">
           <div id="bloque1" class="contenedor">
@@ -73,21 +73,25 @@
           </div>
         </div>
 
-        <div class="pagina_0_abajo">
+        <div class="pagina_1_abajo">
           <div class="divsPaginaAbajo">
             Si quieres jugar con estas palabras: 
-          <button id="btn_palabrasOk" onclick="palabrasOk()">Continuar</button>
+            <button id="btn_palabrasOk" onclick="palabrasOk()">Continuar</button>
           </div>
           <div class="divsPaginaAbajo">
             Si queres resetearlas:
-          <button class="btn_clasico" onclick="resetearPalabras()">Resetear</button>
+            <button class="btn_clasico" onclick="resetearPalabras()">Resetear</button>
+          </div>
+          <div class="divsPaginaAbajo">
+            Reglas del Juego:
+            <button id="btn_instrucciones" onclick="ir_instrucciones()">Leéme</button>
           </div>
         </div>
 
         
-      </div> <!-- Fin Pagina 0 -->
+      </div> <!-- Fin Pagina 1 -->
 
-      <div class="pagina_1">
+      <div class="pagina_2">
         <div class="intro">
           <h2 style="text-decoration: underline;">Preparación del Juego</h2>
           <h3>Antes de continuar debe ocultar esta parte del juego al resto de jugadores.<br>
@@ -98,15 +102,15 @@
 
         <h2>¿Qué equipo empieza?</h2>
 
-        <div class="botones_pagina1">
+        <div class="botones_pagina2">
           <button id="empiezaRojo" onclick="empiezaRojo()">Equipo Rojo</button>
           <button id="empiezaAzul" onclick="empiezaAzul()">Equipo Azul</button>
         </div>
         <h4>Clickee el botón del Equipo que empieza a jugar.</h4>
 
-      </div> <!-- Fin Pagina 1 -->
+      </div> <!-- Fin Pagina 2 -->
       
-      <div class="pagina_2" id="pagina_2">
+      <div class="pagina_3" id="pagina_3">
         <label id="ColoreaCuadraditos">Comienza el ...</label>
         <div class="div_seteando">
           <div id="bloque1" class="contenedor">
@@ -150,10 +154,10 @@
           <button id="btn_comenzarAJugar" onclick="comenzarAJugar()" class="boton_bloqueado">Comenzar  el Juego</button>
         </div>
         
-      </div> <!-- Fin Pagina 2 -->
+      </div> <!-- Fin Pagina 3 -->
       
 
-      <div class="pagina_3" id="pagina_3">
+      <div class="pagina_4" id="pagina_4">
 
         
         <div id="bloque1" class="contenedor">
@@ -200,7 +204,7 @@
         <div class="divContadores">
           <p id="faltanRojos">Faltan: 9</p> - <p id="faltanAzules">Faltan: 9</p>
         </div>
-      </div> <!-- Fin Pagina 3 -->
+      </div> <!-- Fin Pagina 4 -->
 
       <audio id="musicaPerdiste">
         <source src="./music/perdiste.mp3" type="audio/mpeg">
