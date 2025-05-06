@@ -99,7 +99,7 @@ function palabrasOk() {
 }
 
 function ir_instrucciones() {
-  window.location.href = "/instrucciones.html";
+  window.location.href = "./instrucciones.html";
 }
 
 

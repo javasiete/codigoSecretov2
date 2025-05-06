@@ -2,7 +2,7 @@
 // Página 1
 
 function regresar_index() {
-  window.location.href = "/index.html";
+  window.location.href = "./index.html";
 }
 
 function ir_pagina_2() {
