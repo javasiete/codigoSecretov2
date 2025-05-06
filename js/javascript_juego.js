@@ -26,7 +26,7 @@ var paises = [
   'Gancho', 'Gato', 'Genio', 'Gigante', 'Golfo', 'Golondrina', 'Golpe', 'Goma', 'Góndola', 'Gota', 'Grado', 'Granada', 'Grano',
   'Grecia', 'Grifo', 'Guante', 'Guardia', 'Guerra', 'Gusano',
   //H
-  'Helado', 'Helicóptero', 'Hielo', 'Hierba', 'Hoja', 'Holywood', 'Horca', 'Hospital', 'Hotel',
+  'Helado', 'Helicóptero', 'Hielo', 'Hierba', 'Hoja', 'Hollywood', 'Horca', 'Hospital', 'Hotel',
   //I
   'Iglesia', 'Imán', 'India', 'Índice', 'Inglaterra', 'Italia', 'Jarra', 'Judía', 'Juicio',
   //K
@@ -37,7 +37,7 @@ var paises = [
   //M
   'Maestro', 'Magia', 'Malta', 'Mancha', 'Mando', 'Manga', 'Mango', 'Mano', 'Manzana', 'Mañana', 'Marca', 'Marfil',
   'Masa', 'Máscara', 'Mazo', 'Médico', 'Mercurio', 'Mesa', 'Metro', 'México', 'Micro', 'Miel', 'Millonario', 'Mina', 'Misil',
-  'Modelo', 'Módulo', 'Monitor', 'Mono', 'Mortero','Moscú', 'Motor', 'Muelle', 'Muerte', 'Muñeca', 'Murcielágo', 'Muro',
+  'Modelo', 'Módulo', 'Monitor', 'Mono', 'Mortero','Moscú', 'Motor', 'Muelle', 'Muerte', 'Muñeca', 'Murciélago', 'Muro',
   //N
   'Naranja', 'Nave', 'Nieve', 'Nilo', 'Ninja', 'Noche', 'Nudo', 'Nueva York', 'Negro',
   //O
@@ -49,7 +49,7 @@ var paises = [
   //Q
   'Quiniela',
   //R
-  'Radio', 'Rascacielo', 'Ratón', 'Rayo', 'Red', 'Regla', 'Reina', 'Reserva', 'Revolución', 'Rey', 'Robot', 'Rojo', 'Roma', 'Ronda', 'Rosa',' Ruleta', 
+  'Radio', 'Rascacielo', 'Ratón', 'Rayo', 'Red', 'Regla', 'Reina', 'Reserva', 'Revolución', 'Rey', 'Robot', 'Rojo', 'Roma', 'Ronda', 'Rosa', 'Ruleta', 
   //S
   'Sable', 'Sáhara', 'Salsa','Satélite', 'Saturno', 'Señal', 'Serie', 'Serpiente', 'Sierra', 'Silla', 'Sirena', 'Sobre', 'Soldado', 'Submarinista', 'Suerte',
   'Superhéroe',
