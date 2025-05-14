@@ -114,6 +114,7 @@ var juegoFinalizado = false;
 var modoAsesino = false;
 var coloresCuadraditos = {};
 var vinculaciones = {};
+var equipoGanador = null;
 var palabrasRestantes = {
   rojo: 9,
   azul: 8
@@ -169,6 +170,7 @@ function resetear() {
   coloresCuadraditos = {};
   juegoFinalizado = false;
   modoAsesino = false;
+  equipoGanador = null;
   turnoActual = equipoSeleccionado;
   turnosRestantes = 9;
   palabrasRestantes = equipoSeleccionado === "rojo" ? { rojo: 9, azul: 8 } : { rojo: 8, azul: 9 };
@@ -330,21 +332,31 @@ function comenzarAJugar() {
     }
 
     divPais.onclick = function () {
+      // Evita doble clic
       if (divPais.classList.contains("rojo") || divPais.classList.contains("azul") || divPais.classList.contains("negro") || divPais.classList.contains("amarillo")) return;
 
       divPais.classList.remove("rojo", "azul", "amarillo", "gris", "negro");
       divPais.classList.add(vinculaciones[divPais.id]);
 
       const color = vinculaciones[divPais.id];
+
+      // Si ya hubo un ganador o perdedor, no ejecutar lógica adicional
+      if (equipoGanador) return;
+
       if (color === "rojo" || color === "azul") {
         palabrasRestantes[color]--;
         actualizarContador(color);
 
         if (palabrasRestantes[color] === 0) {
+          equipoGanador = color;
           document.getElementById("musicaPGanaste").play();
+          mostrarBannerVictoria(color);
         }
+
       } else if (color === "negro") {
+        equipoGanador = "negro";
         document.getElementById("musicaPerdiste").play();
+        mostrarBannerNegro();
       }
     };
   }
@@ -359,6 +371,35 @@ function actualizarContador(equipo) {
     document.getElementById("faltanAzules").innerText = "Faltan: " + palabrasRestantes.azul;
   }
 }
+
+function mostrarBannerVictoria(equipo) {
+  if (equipoGanador !== equipo) return;
+
+  const banner = document.getElementById("bannerVictoria");
+  const imagen = document.getElementById("imagenVictoria");
+
+  imagen.src = equipo === "rojo" ? "./imgs/bannerRojo.png" : "./imgs/bannerAzul.png";
+  banner.style.display = "flex";
+
+  setTimeout(() => {
+    banner.style.display = "none";
+  }, 5000);
+}
+
+function mostrarBannerNegro() {
+  const banner = document.getElementById("bannerVictoria");
+  const imagen = document.getElementById("imagenVictoria");
+
+  imagen.src = "./imgs/bannerNegro.png";
+  banner.style.display = "flex";
+
+  setTimeout(() => {
+    banner.style.display = "none";
+  }, 3500);
+}
+
+
+//--------------------------------------------------------------------
 
 function cambiarPagina3() {
   var pagina2 = document.querySelector('.pagina_2');

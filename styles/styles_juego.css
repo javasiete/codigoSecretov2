@@ -324,21 +324,22 @@ h4 {
   color: white;
 }
 
+#imagenVictoria {
+  background-color: transparent;
+}
+
 /* ------------------------------------------------------------------------------------------------------------------------------*/
-/* Para el Monitor de mi Oficina (Desde 1242px o menos) */
+/* Para el Monitor de mi Oficina (Desde 1280px o menos) */
 @media only screen and (max-width: 1280px){
   .pagina_1{
     height: 100%;
   }
-
   .pagina_2{
     height: 100%;
   }
-
   .pagina_3{
     height: 100%;
   }
-
   .pagina_4{
     height: 100%;
   }
@@ -353,51 +354,37 @@ h4 {
     /*Tamaño de las Tarjetas*/
     width: 17vw;
     height: 16vh;
-  
     /*Tamaño de la Letra dentro de las Tarjetas*/
     font-size: 35px;
   }
 
 }
 
-
 /* Para Laptopts (Desde 1242px o menos) */
 @media only screen and (max-width: 1242px){
   .pagina_1{
     height: 100%;
   }
-
-  .pagina_2{
-    height: 100%;
-  }
-
-  .pagina_3{
-    height: 100%;
-  }
-
   .pagina_4{
     height: 100%;
   }
 
+  /*Para las tarjetas de la Pagina 4 (Del monitor de mi MacBook Air)*/
   .contenedor > .pais{
     /*Tamaño de las Tarjetas*/
     width: 17vw;
     height: 16vh;
-  
     /*Tamaño de la Letra dentro de las Tarjetas*/
     font-size: 28px;
   }
 
 }
 
-
-
 /* Para Celulares (Desde 768px o menos) */
 @media only screen and (max-width: 768px){
   .pagina_1{
     height: 100%;
   }
-
   .pagina_4{
     height: 100%;
   }
